@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <button *ngIf="isReturnButtonEnabled" (click)="return.emit()" mat-mini-fab>
+      <mat-icon>arrow_left</mat-icon>
+    </button>
+  </div>
+
+  <div class="inner__container">
+    <div>{{ "Здравствуйте, " + userName }}</div>
+    <button
+      (click)="logout.emit()"
+      mat-mini-fab
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<app-header (logout)="logout()" [userName]="userName"></app-header>
+<div class="posts-container">
+  <app-post-card
+    *ngFor="let post of shownPosts"
+    [shownInfo]="post"
+    (openPost)="openDetailedInfo($event)"
+  ></app-post-card>
+</div>
+
+<mat-paginator
+  *ngIf="isContentLoaded"
+  #paginator
+  (page)="handlePageEvent($event)"
+  [pageSize]="10"
+  [length]="posts.length"
+>
+</mat-paginator>

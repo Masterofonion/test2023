@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Регистрация</mat-card-title>
+      </mat-card-header>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Имя пользователя"
+          formControlName="username"
+        />
+        <mat-error *ngIf="regForm.get('username')">{{
+          getErrorMessage("username")
+        }}</mat-error> </mat-form-field
+      ><mat-form-field>
+        <input
+          matInput
+          placeholder="Электронная почта"
+          formControlName="email"
+        /><mat-error *ngIf="regForm.get('email')">{{
+          getErrorMessage("email")
+        }}</mat-error>
+      </mat-form-field>
+      <button type="submit" mat-button>Ок</button>
+    </mat-card>
+  </form>
+</div>

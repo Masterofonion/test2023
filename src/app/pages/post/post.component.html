@@ -1,0 +1,9 @@
+<app-header
+  (logout)="logout()"
+  (return)="returnToMainPage()"
+  [userName]="userName"
+  [isReturnButtonEnabled]="true"
+></app-header>
+<ng-container *ngIf="postData | async as shownInfo"
+  ><app-post-card [shownInfo]="shownInfo"></app-post-card>
+</ng-container>
